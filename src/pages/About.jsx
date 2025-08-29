@@ -27,6 +27,8 @@ const About = () => {
         start: "top 20%",
         end: "top -50%",
         pin: true,
+        pinType: 'fixed',
+        anticipatePin: 1,
         onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
@@ -43,18 +45,18 @@ const About = () => {
     <div>
       <div className="first-section p-5">
         <div
-          className="absolute h-[25vw] w-[20vw] bg-black top-50 right-[30vw] rounded-3xl overflow-hidden"
+          className="absolute h-[25vw] w-[20vw] top-50 right-[10vw] rounded-3xl overflow-hidden"
           ref={image}
         >
-          <img ref={imageRef} className="h-full w-full object-cover opacity-75" src="" />
+          <img ref={imageRef} className="h-full w-full object-cover opacity-75" />
         </div>
-        <div className="relative font-[Primary]">
+        <div className="relative">
           <div className="mt-[50vh]">
-            <h1 className="uppercase text-[20vw] leading-[17vw] text-center">
+            <h1 className="uppercase text-[20vw] leading-[17vw] text-center font-semibold">
               Four <br /> S3as
             </h1>
           </div>
-          <div className="text-5xl text-left mt-20 pr-[35vw]">
+          <div className="text-5xl text-left mt-20 pr-[30vw] font-[Primary]">
             A brand, to us, isn't just a logo or a product. It's a ship with a
             soul, a voice, a compass, a heartbeat. Ignore that, and you might
             sail fast, but you'll never leave a wake. We believe in stories that
