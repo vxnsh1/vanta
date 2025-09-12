@@ -9,7 +9,7 @@ const Home = () => {
       <div className='h-full w-full fixed'>
         <Video />
       </div>
-      <div className='h-120 top-[30%] md:top-[20%] w-full relative flex flex-col items-center justify-between'> 
+      <div className='h-full w-full relative flex flex-col items-center justify-between'> 
           <HeroText />
           <Footer />
       </div>
