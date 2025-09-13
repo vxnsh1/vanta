@@ -45,7 +45,7 @@ const About = () => {
     <div>
       <div className="first-section p-5">
         <div
-          className="absolute h-[25vw] w-[20vw] top-50 right-[10vw] rounded-3xl overflow-hidden"
+          className="absolute h-52 md:h-96 w-38 md:w-72 top-50 right-[10vw] rounded-3xl overflow-hidden"
           ref={image}
         >
           <img ref={imageRef} className="h-full w-full object-cover opacity-75" />
@@ -56,7 +56,7 @@ const About = () => {
               Four <br /> S3as
             </h1>
           </div>
-          <div className="text-5xl text-left mt-20 pr-[30vw] font-[Primary]">
+          <div className="text-2xl md:text-5xl text-left mt-20 pr-[30vw] font-[Primary]">
             A brand, to us, isn't just a logo or a product. It's a ship with a
             soul, a voice, a compass, a heartbeat. Ignore that, and you might
             sail fast, but you'll never leave a wake. We believe in stories that
