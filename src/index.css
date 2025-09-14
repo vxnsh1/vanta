@@ -40,7 +40,6 @@ body{
 }
 
 .moveLink {
-  /* start invisible and squashed */
   opacity: 0;
   transform-origin: top;
   transform: scaleY(0);
@@ -49,7 +48,6 @@ body{
 }
 
 .group:hover .moveLink {
-  /* smoothly expand downward */
   opacity: 1;
   transform: scaleY(1);
 }
