@@ -4,12 +4,15 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import LoadingBars from "./components/common/LoadingBar.jsx";
+import Context from "./context/Context.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <LoadingBars>
-        <App />
+        <Context>
+          <App />
+        </Context>
       </LoadingBars>
     </BrowserRouter>
   </StrictMode>

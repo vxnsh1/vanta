@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
+import { NavbarContext } from "../../context/Context";
 
 const Navbar = () => {
   const navbarViolet = useRef(null);
+  const {menuOpen, setMenuOpen} = useContext(NavbarContext);
   return (
     <>
       <div className="fixed z-5 w-full h-12 flex justify-between items-center">
@@ -13,13 +15,15 @@ const Navbar = () => {
         </div>
 
         <div
+        onClick={() => {
+          setMenuOpen(true);
+        }}
           onMouseEnter={() => {
             navbarViolet.current.style.height = "100%";
           }}
           onMouseLeave={() => {
             navbarViolet.current.style.height = "0%";
           }}
-          onClick={() => setmenuOpen((prev) => !prev)}
           className="h-full w-20 md:w-52 bg-black relative flex justify-end items-center group"
         >
           <div className="w-18 flex flex-col items-end mr-4 md:mr-10 fixed z-10 transition-all duration-200 ease-in-out cursor-pointer">

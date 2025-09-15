@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { CiGlobe } from "react-icons/ci";
 import Time from "./Time";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { NavbarContext } from "../../context/Context";
 
-const NavMenu = ({menuOpen}) => {
+const NavMenu = () => {
   const navLinks = [
     {
       name: "Work",
@@ -42,44 +43,88 @@ const NavMenu = ({menuOpen}) => {
     { name: "FB", href: "#" },
   ];
 
+  const { menuOpen, setMenuOpen } = useContext(NavbarContext);
   const screenNav = useRef(null);
+  const fullScreenNav = useRef(null);
+
+  function gsapAnimation() {
+    const timeLine = gsap.timeline();
+    timeLine.to(".Nav", {
+      display: "flex",
+    });
+    timeLine.to(".bars", {
+      height: "100%",
+      stagger: {
+        amount: -0.3,
+      },
+    });
+    timeLine.to(".links", {
+      opacity: 1,
+      rotateX: 0,
+      stagger: {
+        amount: 0.3,
+      },
+    });
+    timeLine.to(".navigationLinks", {
+      opacity: 1,
+    });
+  }
+  function gsapAnimationReverse() {
+    const timeLine = gsap.timeline();
+    timeLine.to(".links", {
+      opacity: 0,
+      rotateX: 90,
+      stagger: {
+        amount: 0.1,
+      },
+    });
+    timeLine.to(".bars", {
+      height: 0,
+      stagger: {
+        amount: 0.1,
+      },
+    });
+    timeLine.to(".navigationLinks", {
+      opacity: 0,
+    });
+    timeLine.to(".Nav", {
+      display: "none",
+    });
+  }
+
   useGSAP(
     function () {
-      const timeLine = gsap.timeline();
-      timeLine.from(".bars", {
-        delay: 0.3,
-        height: 0,
-        stagger: {
-          amount: -0.2,
-        },
-      });
-      timeLine.from(screenNav.current, {
-        opacity: 0,
-      })
-
-      timeLine.from('.links', {
-        rotateX: 90,
-        stagger: {
-          amount: 0.2,
-        }
-      })
+      if (menuOpen) {
+        gsapAnimation();
+      } else {
+        gsapAnimationReverse();
+      }
     },
+    [menuOpen]
   );
+  
   return (
-    <div className={`h-screen w-full bg-white absolute z-[99] flex gitflex-col justify-between`}>
+    <div
+      ref={fullScreenNav}
+      className={`Nav h-screen w-full absolute z-[99] hidden flex-col justify-between`}
+    >
       <div className="h-screen w-full fixed">
-          <div className="h-full w-full flex">
-            <div className="bars h-full w-1/5 bg-black"></div>
-            <div className="bars h-full w-1/5 bg-black"></div>
-            <div className="bars h-full w-1/5 bg-black"></div>
-            <div className="bars h-full w-1/5 bg-black"></div>
-            <div className="bars h-full w-1/5 bg-black"></div>
-          </div>
+        <div className="h-full w-full flex">
+          <div className="bars h-full w-1/5 bg-black"></div>
+          <div className="bars h-full w-1/5 bg-black"></div>
+          <div className="bars h-full w-1/5 bg-black"></div>
+          <div className="bars h-full w-1/5 bg-black"></div>
+          <div className="bars h-full w-1/5 bg-black"></div>
         </div>
-      <div ref={screenNav} className="flex w-full h-auto px-2 justify-between z-[999]">
+      </div>
+      <div
+        ref={screenNav}
+        className="navigationLinks flex w-full h-auto px-2 justify-between z-[999]"
+      >
         <img src="/logo.png" alt="" className="w-20 h-8 mt-2" />
-        <div className={`h-30 w-30 flex items-center justify-center relative -right-2 group cursor-pointer`} 
-        onClick={() => setmenuOpened(prev => !prev)}
+        <div
+          className={`h-30 w-30 flex items-center justify-center relative -right-2 group cursor-pointer`}
+          onClick={() => setMenuOpen(false)}
         >
           <div className="w-[1.5px] h-32 bg-white rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
           <div className="w-[1.5px] h-32 bg-white -rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
@@ -141,7 +186,7 @@ const NavMenu = ({menuOpen}) => {
           </div>
         ))}
       </div>
-      <div className="p-2 max-sm:mb-15 md:flex w-full h-12 font-[Primary] items-center justify-between text-white z-[999]">
+      <div className="links p-2 max-sm:mb-15 md:flex w-full h-12 font-[Primary] items-center justify-between text-white z-[999]">
         <div className="hidden gap-8 text-xl md:flex ">
           <CiGlobe size={30} className="-mt-2" />
           <div className="flex -mt-1">
