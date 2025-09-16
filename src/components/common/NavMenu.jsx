@@ -106,7 +106,7 @@ const NavMenu = () => {
   return (
     <div
       ref={fullScreenNav}
-      className={`Nav h-screen w-full absolute z-[99] hidden flex-col justify-between`}
+      className={`Nav h-screen w-full absolute z-[99] hidden overflow-hidden flex-col justify-between`}
     >
       <div className="h-screen w-full fixed">
         <div className="h-full w-full flex">
@@ -121,13 +121,13 @@ const NavMenu = () => {
         ref={screenNav}
         className="navigationLinks flex w-full h-auto px-2 justify-between z-[999]"
       >
-        <img src="/logo.png" alt="" className="w-20 h-8 mt-2" />
+        <p className="font-[DimitriInverse] text-4xl mt-5 ml-5 md:mt-[15px] md:ml-[10px]">Vanta</p>
         <div
-          className={`h-30 w-30 flex items-center justify-center relative -right-2 group cursor-pointer`}
+          className={`h-30 w-30 flex items-center justify-center relative max-sm:-top-3 -right-5 md:-right-2 group cursor-pointer`}
           onClick={() => setMenuOpen(false)}
         >
-          <div className="w-[1.5px] h-32 bg-white rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
-          <div className="w-[1.5px] h-32 bg-white -rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
+          <div className="w-[1.5px] h-16 md:h-32 bg-white rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
+          <div className="w-[1.5px] h-16 md:h-32 bg-white -rotate-45 group-hover:bg-violet-500 transition-colors duration-150"></div>
         </div>
       </div>
       <div className="-mt-20 ">
@@ -144,7 +144,7 @@ const NavMenu = () => {
             <div
               className={`absolute ${
                 idx === 0 ? "top-0" : "-top-1"
-              } moveLink h-17 md:h-auto bg-violet-700 flex gap-52 md:gap-85`}
+              } moveLink h-17 md:h-auto bg-violet-900 flex gap-52 md:gap-85`}
             >
               <div className="flex items-center moveX">
                 <p className="whitespace-nowrap text-center -mb-4 -mt-1 md:mt-1 ml-2 mr-2 text-7xl md:text-9xl">
@@ -196,9 +196,9 @@ const NavMenu = () => {
             </span>
           </div>
         </div>
-        <div className="md:text-[11px] md:flex uppercase w-full md:w-auto ml-50 md:ml-0 text-[9px] mb-2 md:mb-0 gap-2">
+        <div className="md:text-[11px] md:flex uppercase w-full md:w-auto ml-[40%] md:ml-0 text-[9px] mb-2 md:mb-0 gap-2">
           {footerLinks.map((item, idx) => (
-            <a href={item.href} className="max-sm:w-full">
+            <a href={item.href} className="max-sm:w-full hover:text-violet-500 transition-colors duration-200">
               {item.name}
               <br />
             </a>
@@ -208,7 +208,7 @@ const NavMenu = () => {
           {socialLinks.map((item, idx) => (
             <a
               href={item.href}
-              className="rounded-full border-2 border-white w-14 text-center h-8 text-3xl"
+              className="rounded-full border-2 border-white w-14 text-center h-8 text-3xl hover:text-violet-500 hover:border-violet-500 transition-colors duration-200"
             >
               {item.name}
             </a>

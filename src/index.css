@@ -10,6 +10,16 @@
     src: url("/fonts/Lausanne-300.woff2");
 }
 
+@font-face {
+    font-family: Dimitri;
+    src: url("/fonts/dimitri.ttf");
+}
+
+@font-face {
+    font-family: DimitriInverse;
+    src: url("/fonts/dimitri-inverse.ttf");
+}
+
 body{
     overflow-x: hidden;
     background-color: #fff;

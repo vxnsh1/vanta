@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="fixed z-5 w-full h-12 flex justify-between items-center">
         <div className="w-26 md:w-34 p-5 mt-5">
           <Link to="/">
-            <img src="/logo.png" className="w-full" alt="Vanta Logo" />
+            <p className="font-[DimitriInverse] text-4xl">Vanta</p>
           </Link>
         </div>
 
@@ -22,7 +22,7 @@ const Navbar = () => {
             navbarViolet.current.style.height = "100%";
           }}
           onMouseLeave={() => {
-            navbarViolet.current.style.height = "0%";
+            navbarViolet.current.style.height = "0% ";
           }}
           className="h-full w-20 md:w-52 bg-black relative flex justify-end items-center group"
         >
@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
           <div
             ref={navbarViolet}
-            className="bg-violet-500 w-full h-0  absolute top-0 transition-all duration-100 ease-in-out cursor-pointer"
+            className="bg-violet-500 w-full h-0 absolute top-0 transition-all duration-100 ease-in-out cursor-pointer"
           ></div>
           <div className="relative"></div>
         </div>
