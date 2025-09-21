@@ -6,7 +6,7 @@ const ProductNavbar = ({ hovered, setHovered }) => {
   const { menuOpen, setMenuOpen } = useContext(NavbarContext);
 
   return (
-    <div className="fixed z-10 w-full h-12 flex justify-between items-center">
+    <div className="top-0 absolute z-10 w-full h-12 flex justify-between items-center">
       <div className="w-26 md:w-34 p-5 mt-3">
         <Link to="/">
           <p className="font-[DimitriInverse] text-4xl text-black">Vanta</p>

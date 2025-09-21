@@ -198,7 +198,7 @@ const NavMenu = () => {
         </div>
         <div className="md:text-[11px] md:flex uppercase w-full md:w-auto ml-[40%] md:ml-0 text-[9px] mb-2 md:mb-0 gap-2">
           {footerLinks.map((item, idx) => (
-            <a href={item.href} className="max-sm:w-full hover:text-violet-500 transition-colors duration-200">
+            <a href={item.href} className=" max-sm:w-full hover:text-violet-500 transition-colors duration-200">
               {item.name}
               <br />
             </a>

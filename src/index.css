@@ -24,6 +24,7 @@ body{
     overflow-x: hidden;
     background-color: #fff;
     font-family: "Ubuntu", sans-serif;
+    overscroll-behavior: none;
 }
 
 .transition-bars{
