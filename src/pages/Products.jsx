@@ -48,7 +48,7 @@ const Projects = () => {
 
   return (
     <div className="w-full h-screen font-[Primary]">
-      <div className="w-full h-30 bg-red-500">
+      <div className="w-full h-30 bg-white">
         {/* Navbar */}
         <ProductNavbar hovered={isMenuHover} setHovered={setIsMenuHover} />
 
