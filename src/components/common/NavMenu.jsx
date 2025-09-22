@@ -37,9 +37,9 @@ const NavMenu = () => {
   ];
 
   const socialLinks = [
-    { name: "IG", href: "#" },
-    { name: "IN", href: "#" },
-    { name: "X", href: "#" },
+    { name: "IG", href: "https://www.instagram.com/ugh.vansh" },
+    { name: "IN", href: "https://www.linkedin.com/in/vanshchouhan" },
+    { name: "X", href: "https://x.com/itzvxnsh" },
     { name: "FB", href: "#" },
   ];
 
@@ -208,6 +208,7 @@ const NavMenu = () => {
           {socialLinks.map((item, idx) => (
             <a
               href={item.href}
+              target="_blank"
               className="rounded-full border-2 border-white w-14 text-center h-8 text-3xl hover:text-violet-500 hover:border-violet-500 transition-colors duration-200"
             >
               {item.name}

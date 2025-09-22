@@ -16,9 +16,9 @@ const Projects = () => {
   const [isBlogHover, setIsBlogHover] = useState(false);
 
   const socialLinks = [
-    { name: "IG", href: "#" },
-    { name: "IN", href: "#" },
-    { name: "X", href: "#" },
+    { name: "IG", href: "https://www.instagram.com/ugh.vansh" },
+    { name: "IN", href: "https://www.linkedin.com/in/vanshchouhan" },
+    { name: "X", href: "https://x.com/itzvxnsh" },
     { name: "FB", href: "#" },
   ];
 
@@ -48,14 +48,14 @@ const Projects = () => {
 
   return (
     <div className="w-full h-screen font-[Primary]">
-      <div className="w-full h-30 bg-white">
+      <div className="w-full h-30 bg-red-500">
         {/* Navbar */}
         <ProductNavbar hovered={isMenuHover} setHovered={setIsMenuHover} />
 
         {/* Menu */}
         <div
-          className="bg-black w-52 h-32 absolute right-0 hidden md:flex items-end py-1 px-2 cursor-pointer"
-          onMouseEnter={() => setIsMenuHover(true)}
+          className="bg-black w-52 h-30 absolute right-0 hidden md:flex top-0 items-end py-1 px-2 cursor-pointer overflow-hidden"
+          onMouseEnter={() => setIsMenuHover(true)} 
           onMouseLeave={() => setIsMenuHover(false)}
         >
           <span
@@ -76,7 +76,7 @@ const Projects = () => {
         <div
           onMouseEnter={() => setIsCreatorHover(true)}
           onMouseLeave={() => setIsCreatorHover(false)}
-          className="w-70 h-12 absolute right-152 hidden md:flex py-1 px-2 bg-black cursor-pointer"
+          className="w-70 h-12 absolute right-152 hidden md:flex py-1 px-2 bg-black cursor-pointer z-20"
         >
           <Link
             className="w-full h-full absolute flex items-end z-20 py-2"
@@ -101,7 +101,7 @@ const Projects = () => {
         <div
           onMouseEnter={() => setIsBlogHover(true)}
           onMouseLeave={() => setIsBlogHover(false)}
-          className="w-100 h-22 hidden md:flex absolute right-52 py-1 px-2 bg-black cursor-pointer"
+          className="w-100 h-22 hidden md:flex absolute right-52 py-1 px-2 bg-black cursor-pointer z-20"
         >
           <Link
             className="w-full h-full relative flex items-end z-20"
@@ -144,6 +144,7 @@ const Projects = () => {
             {socialLinks.map((item, idx) => (
               <a
                 href={item.href}
+                target="_blank"
                 className="rounded-full border-2 border-white w-12 md:w-28 text-center h-7 md:h-16 text-2xl md:text-7xl hover:text-violet-500 hover:border-violet-500 transition-colors duration-200"
               >
                 {item.name}
