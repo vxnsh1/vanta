@@ -105,7 +105,7 @@ const Projects = () => {
         >
           <Link
             className="w-full h-full relative flex items-end z-20"
-            to={"/blog"}
+            to={"/products"}
           >
             <span
               className={`uppercase text-xl transition-colors duration-200 ${
