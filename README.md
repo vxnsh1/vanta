@@ -1,6 +1,6 @@
 # Vanta
 
-A modern, animated portfolio website showcasing products with immersive video backgrounds and smooth GSAP scroll-driven animations.
+A modern, animated website showcasing products with immersive video backgrounds and smooth GSAP scroll-driven animations.
 
 ## Overview
 
